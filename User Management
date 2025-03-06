@@ -4,7 +4,7 @@
 
 ### Create a User
 Creates a new MySQL user with a specified password.
-```sql
+```
 CREATE USER 'thomas'@'%' IDENTIFIED BY 'EEG5vU8GkV@123!';
 ```
 
