@@ -1,17 +1,57 @@
-
+### Resolving Permission Errors
+If you encountered a "Permission denied" error, it likely means the MySQL server does not have the required permissions to access the file. Using `LOAD DATA LOCAL INFILE` bypasses this by directing MySQL to retrieve the file from the client machine instead of the server.
 
 ### Understanding `LOAD DATA LOCAL INFILE`
 
 The `LOCAL` keyword in the `LOAD DATA INFILE` command specifies that the file being loaded resides on the client machine (where the MySQL client is running) rather than on the server. By default, `LOAD DATA INFILE` expects the file to be located on the server itself.
 
-### Resolving Permission Errors
-If you encountered a "Permission denied" error, it likely means the MySQL server does not have the required permissions to access the file. Using `LOAD DATA LOCAL INFILE` bypasses this by directing MySQL to retrieve the file from the client machine instead of the server.
 
-### How `LOAD DATA LOCAL INFILE` Works
-This command allows you to import files from your local machine into a MySQL database, provided that:
-1. The file is accessible on the client machine.
-2. The MySQL client has the necessary permissions to read the file.
-3. The `local_infile` setting is enabled in MySQL.
+### Steps to Use `LOAD DATA LOCAL INFILE`
 
-Using this method ensures a smooth file import process, even when the MySQL server lacks direct access to the file's location.
+#### 1. Create a Table (Example)
+```sql
+CREATE TABLE bxawrcmrhe.january2023 (
+  column1 INT,
+  column2 VARCHAR(50),
+  column3 DATE
+);
+```
+
+#### 2. Verify User Permissions
+```sql
+SHOW GRANTS FOR 'bxawrcmrhe'@'%';
+```
+Ensure the user has `ALL PRIVILEGES` on the database.
+
+#### 3. Enable `local_infile`
+```sql
+SHOW VARIABLES LIKE 'local_infile';
+```
+If the value is `OFF`, enable it by modifying the MySQL configuration file (`my.cnf` or `my.ini`) and adding:
+```ini
+[mysqld]
+local_infile=1
+```
+Then restart the MySQL server.
+
+#### 4. Import Data from a Local File
+```sql
+LOAD DATA LOCAL INFILE '/path/to/local/file.csv'
+INTO TABLE january2023
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+```
+
+### Troubleshooting: MySQL Access Denied Issue
+If you get an "Access denied" error when using PHP, modify the PHP-FPM settings:
+```ini
+php_admin_value[mysqli.allow_local_infile] = 1
+```
+And make sure that all previlidges are assigned to the user:
+```sql
+SHOW GRANTS FOR 'jzpewmzusw'@'%';
+```
+This ensures the user can execute `LOAD DATA LOCAL INFILE` successfully.
 
