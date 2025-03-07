@@ -50,7 +50,7 @@ WHERE table_schema = "naprwvtaxc"
 GROUP BY table_schema;
 ```
 
-### List Tables in a Database Along with Their Sizes
+### List Tables in a Database Along with Their Sizes in GBs
 Retrieves a list of tables in `naprwvtaxc` and their sizes.
 ```sql
 SELECT table_name AS "Table",
