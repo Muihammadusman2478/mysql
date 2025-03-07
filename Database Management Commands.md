@@ -7,11 +7,22 @@ Lists tables consuming significant storage in the `naprwvtaxc` database.
 ```sql
 du -d1 -h /var/lib/mysql/naprwvtaxc/* 2>/dev/null | awk '$1 ~ /G/'
 ```
+*Alternate:*
+
+```sql
+read -p "Enter database name: " db_name; du -d1 -h /var/lib/mysql/$db_name/* 2>/dev/null | awk '$1 ~ /G/'
+```
 
 ### Find a Specific Table in a Database
 Searches for `yotpo_order_status_history` table in `naprwvtaxc`.
 ```sql
 mysql -u naprwvtaxc -p -e "SHOW TABLES FROM naprwvtaxc" | grep 'yotpo_order_status_history'
+```
+
+*Alternate:*
+
+```sql
+read -p "Enter database name: " db_name; read -p "Enter table name: " table_name; mysql -u root -p -e "SHOW TABLES FROM $db_name" | grep "$table_name"
 ```
 
 ### Get the Row Count of a Table
