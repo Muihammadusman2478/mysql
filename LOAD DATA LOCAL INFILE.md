@@ -45,7 +45,9 @@ IGNORE 1 ROWS;
 ```
 
 ### Troubleshooting: MySQL Access Denied Issue
-If you get an "Access denied" error when using PHP, modify the PHP-FPM settings:
+
+If customer says that I was able to do that using the mysql command line tool but I want to be able to do the same using php code, then add below to the php-fpm settings.
+
 ```ini
 php_admin_value[mysqli.allow_local_infile] = 1
 ```
