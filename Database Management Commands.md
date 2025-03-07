@@ -13,7 +13,7 @@ du -d1 -h /var/lib/mysql/naprwvtaxc/* 2>/dev/null | awk '$1 ~ /G/'
 read -p "Enter database name: " db_name; du -d1 -h /var/lib/mysql/$db_name/* 2>/dev/null | awk '$1 ~ /G/'
 ```
 
-### Find a Specific Table in a Database
+### Grep a Specific Table in a Database
 Searches for `yotpo_order_status_history` table in `naprwvtaxc`.
 ```sql
 mysql -u naprwvtaxc -p -e "SHOW TABLES FROM naprwvtaxc" | grep 'yotpo_order_status_history'
