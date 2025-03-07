@@ -36,7 +36,7 @@ Then restart the MySQL server.
 
 #### 4. Import Data from a Local File
 ```sql
-LOAD DATA LOCAL INFILE '/path/to/local/file.csv'
+LOAD DATA LOCAL INFILE '/home/579559.cloudwaysapps.com/bxawrcmrhe/public_html/wp-content/uploads/wpallimport/files/1.csv'
 INTO TABLE january2023
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
