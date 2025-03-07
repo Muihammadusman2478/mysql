@@ -1,12 +1,12 @@
 # mysql
 
 ### To check which table is taking more space: (It will check even orphan table)
-```
+```sql
 du -d1 -h /var/lib/mysql/naprwvtaxc/* 2>/dev/null | awk '$1 ~ /G/'
 ```
 
 ### To grep the table "yotpo_order_status_history"
-```
+```sql
 mysql -u naprwvtaxc -p -e "SHOW TABLES FROM naprwvtaxc" | grep 'yotpo_order_status_history'
 
 ```
