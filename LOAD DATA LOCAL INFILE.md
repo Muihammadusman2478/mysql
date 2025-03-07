@@ -59,7 +59,7 @@ GRANT ALL PRIVILEGES ON bxawrcmrhe.* TO 'thomas'@'%';
 ```
 
 ```sql
-SHOW GRANTS FOR 'jzpewmzusw'@'%';
+SHOW GRANTS FOR 'bxawrcmrhe'@'%';
 ```
 
 ### Apply Changes
