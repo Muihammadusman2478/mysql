@@ -56,6 +56,11 @@ And make sure that all previlidges are assigned to the user:
 Grants all available privileges on the `bxawrcmrhe` database to the user `thomas`.
 ```sql
 GRANT ALL PRIVILEGES ON bxawrcmrhe.* TO 'thomas'@'%';
+```
+
+```sql
+SHOW GRANTS FOR 'jzpewmzusw'@'%';
+```
 
 ### Apply Changes
 Flushes privileges to ensure changes take effect.
@@ -63,8 +68,6 @@ Flushes privileges to ensure changes take effect.
 FLUSH PRIVILEGES;
 ```
 
-```sql
-SHOW GRANTS FOR 'jzpewmzusw'@'%';
-```
+
 This ensures the user can execute `LOAD DATA LOCAL INFILE` successfully.
 
