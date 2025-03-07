@@ -52,6 +52,17 @@ If customer says that I was able to do that using the mysql command line tool bu
 php_admin_value[mysqli.allow_local_infile] = 1
 ```
 And make sure that all previlidges are assigned to the user:
+
+Grants all available privileges on the `bxawrcmrhe` database to the user `thomas`.
+```sql
+GRANT ALL PRIVILEGES ON bxawrcmrhe.* TO 'thomas'@'%';
+
+### Apply Changes
+Flushes privileges to ensure changes take effect.
+```sql
+FLUSH PRIVILEGES;
+```
+
 ```sql
 SHOW GRANTS FOR 'jzpewmzusw'@'%';
 ```
