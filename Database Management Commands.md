@@ -1,6 +1,26 @@
 # MySQL Database Management Commands
 
-## 1. Checking Database and Table Sizes
+### Create a Database
+
+```sql
+CREATE DATABASE jahxxhdjxe;
+
+GRANT ALL PRIVILEGES ON jahxxhdjxe.* TO 'jahxxhdjxe'@'%' IDENTIFIED BY 'ppGbKhYM39';
+FLUSH PRIVILEGES;
+```
+
+### Drop a Database
+
+```sql
+DROP DATABASE dbname;
+```
+
+### Truncate a Table
+
+```sql
+TRUNCATE TABLE table_name;
+```
+
 
 ### Check Which Table is Taking More Space
 Lists tables consuming significant storage in the `naprwvtaxc` database.
