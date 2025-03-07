@@ -4,7 +4,8 @@
 
 ```sql
 CREATE DATABASE jahxxhdjxe;
-
+'''
+```sql
 GRANT ALL PRIVILEGES ON jahxxhdjxe.* TO 'jahxxhdjxe'@'%' IDENTIFIED BY 'ppGbKhYM39';
 FLUSH PRIVILEGES;
 ```
