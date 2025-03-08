@@ -10,14 +10,7 @@ read replace_domain
 
 echo "Running search-replace commands..."
 
-# Command 1: Replace http:// with https://
-wp --skip-plugins --skip-themes search-replace 'http://' 'https://' --all-tables --report-changed-only --precise --allow-root
-
-# Command 2: Replace the full domain (e.g., https://cloudways.com)
-wp --skip-plugins --skip-themes search-replace "https://$search_domain" "https://$replace_domain" --all-tables --report-changed-only --precise --allow-root
-
-# Command 3: Replace the domain (excluding email addresses)
-wp --skip-plugins --skip-themes search-replace "/(?<!@)$search_domain/" "$replace_domain" --regex --all-tables --report-changed-only --precise --allow-root
+wp --skip-plugins --skip-themes search-replace "$search_domain" "$replace_domain"  --all-tables --report-changed-only --precise --allow-root
 
 echo "All search-replace commands completed!"
 
