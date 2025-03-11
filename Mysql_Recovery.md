@@ -104,6 +104,12 @@ for file in *.sql; do echo "mysql ${file%.sql} < $file"; done
 ```
 Run the output under `/home/master/db`.
 
+*Good Alternate Option To Import all the DBs at once*
+```sql
+for i in $(ls -l ../applications/ | grep '^d'| awk '{print $NF}'); do     mysql $i < /home/master/db/$i.sql; done
+```
+
+
 ## **Step 7: Verify Users**
 Check MySQL users:
 ```sql
