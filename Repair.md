@@ -1,13 +1,3 @@
-Here is a short `.md` file with a description and purpose for MySQL table checking and repairing commands.  
-
----
-
-### **MySQL Table Maintenance Guide**  
-
-This document provides essential commands for checking, repairing, and optimizing MySQL tables. These commands help identify and fix corrupted tables in databases while ensuring optimal performance.
-
----
-
 ## **Checking Corrupted Tables**  
 
 ### **Check All Databases for Corruption**  
