@@ -10,6 +10,12 @@ GRANT ALL PRIVILEGES ON jahxxhdjxe.* TO 'jahxxhdjxe'@'%' IDENTIFIED BY 'ppGbKhYM
 FLUSH PRIVILEGES;
 ```
 
+### Verify Permissions
+Shows the permissions assigned to the user `thomas`.
+```sql
+SHOW GRANTS FOR 'jahxxhdjxe'@'%';
+```
+
 ### Drop a Database
 
 ```sql
