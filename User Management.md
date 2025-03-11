@@ -53,9 +53,9 @@ SELECT User, Host FROM mysql.db WHERE Db = 'gxkfukcska';
 ```
 
 ### Delete a Specific User
-Removes the user `rizwan.s` from MySQL.
+Removes the user `rizwan` from MySQL.
 ```sql
-DROP USER 'rizwan.s'@'%';
+DROP USER 'rizwan'@'%';
 ```
 
 ### List All Users Across Databases
