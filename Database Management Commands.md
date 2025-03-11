@@ -51,6 +51,18 @@ du -d1 -h /var/lib/mysql/naprwvtaxc/* 2>/dev/null | awk '$1 ~ /G/'
 read -p "Enter database name: " db_name; du -d1 -h /var/lib/mysql/$db_name/* 2>/dev/null | awk '$1 ~ /G/'
 ```
 
+
+### Adjusting `max_allowed_packet` for MySQL Import/Export  
+
+The `--max_allowed_packet` option in MySQL sets the maximum size of a single query or packet that MySQL can process. This is useful when dealing with large SQL dumps containing big `INSERT` statements or `BLOB/TEXT` data.
+
+```sql
+mysql --max_allowed_packet=256M -u mkxqyfudhp -p mkxqyfudhp < db25live.sql
+```
+```sql
+mysqldump --max_allowed_packet=256M -u nrmrhuukrh -p nrmrhuukrh > nrmrhuukrh_new.sql
+```
+
 ### Grep a Specific Table in a Database
 Searches for `yotpo_order_status_history` table in `naprwvtaxc`.
 ```sql
