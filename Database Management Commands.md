@@ -16,24 +16,22 @@ FLUSH PRIVILEGES;
 DROP DATABASE dbname;
 ```
 
-### Truncate a Table
-
-```sql
-TRUNCATE TABLE table_name;
-```
-
 ### Alter Or Update User Password
 
 Updates the password for the user `thomas`.
 ```sql
-ALTER USER 'thomas'@'%' IDENTIFIED BY 'EEG5vU8GkV@123!';
+ALTER USER 'jahxxhdjxe'@'%' IDENTIFIED BY 'EEG5vU8GkV@123!';
 ```
 
 ### Apply Changes
-
 Flushes privileges to ensure changes take effect.
 ```sql
 FLUSH PRIVILEGES;
+```
+
+### Truncate a Table
+```sql
+TRUNCATE TABLE table_name;
 ```
 
 ### Check Which Table is Taking More Space
