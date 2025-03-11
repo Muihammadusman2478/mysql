@@ -22,6 +22,16 @@ DROP DATABASE dbname;
 TRUNCATE TABLE table_name;
 ```
 
+### Alter Or Update User Password
+Updates the password for the user `thomas`.
+```sql
+ALTER USER 'thomas'@'%' IDENTIFIED BY 'EEG5vU8GkV@123!';
+```
+
+### Apply Changes
+Flushes privileges to ensure changes take effect.
+```sql
+FLUSH PRIVILEGES;
 
 ### Check Which Table is Taking More Space
 Lists tables consuming significant storage in the `naprwvtaxc` database.
