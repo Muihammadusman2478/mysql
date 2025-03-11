@@ -20,7 +20,7 @@ Shows the permissions assigned to the user `thomas`.
 SHOW GRANTS FOR 'thomas'@'%';
 ```
 
-### Update User Password
+### Alter Or Update User Password
 Updates the password for the user `thomas`.
 ```sql
 ALTER USER 'thomas'@'%' IDENTIFIED BY 'EEG5vU8GkV@123!';
