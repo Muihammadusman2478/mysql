@@ -59,6 +59,7 @@ done
 ```
 
 ## **Step 3: Remove Old Database Files**
+All directories inside /var/lib/mysql/ are deleted, except for /var/lib/mysql/mysql/
 ```sh
 cd /var/lib/mysql/
 rm -rf `ls -d /var/lib/mysql/* | grep -v "/var/lib/mysql/mysql"`
