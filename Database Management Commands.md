@@ -11,7 +11,7 @@ FLUSH PRIVILEGES;
 ```
 
 ### Verify Permissions
-Shows the permissions assigned to the user `thomas`.
+Shows the permissions assigned to the user `jahxxhdjxe`.
 ```sql
 SHOW GRANTS FOR 'jahxxhdjxe'@'%';
 ```
@@ -24,7 +24,7 @@ DROP DATABASE dbname;
 
 ### Alter Or Update User Password
 
-Updates the password for the user `thomas`.
+Updates the password for the user `jahxxhdjxe`.
 ```sql
 ALTER USER 'jahxxhdjxe'@'%' IDENTIFIED BY 'EEG5vU8GkV@123!';
 ```
