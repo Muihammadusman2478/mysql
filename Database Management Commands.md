@@ -121,6 +121,14 @@ WHERE table_schema = "naprwvtaxc"
 ORDER BY (data_length + index_length) DESC;
 ```
 
+
+### How to extract a single table from database dump
+```sql
+sed -n -e '/CREATE TABLE.*`mytable`/,/UNLOCK TABLES;/p' db_dump.sql > mytable.sql
+```
+Where **mytable** is the actual table name and db_dump.sql is the database dump. 
+
+
 ### Check InnoDB Buffer Pool Size in GBs
 Displays the size of the InnoDB buffer pool.
 ```sql
