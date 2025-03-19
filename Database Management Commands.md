@@ -1,5 +1,10 @@
 # MySQL Database Management Commands
 
+### See running MYSQL queries
+```sql
+watch -n 1 "mysql -e 'SHOW FULL PROCESSLIST'"
+```
+
 ### Create a Database
 
 ```sql
