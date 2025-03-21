@@ -1,12 +1,15 @@
 # MySQL Database Management Commands
 
-### See running MYSQL queries
+### To see continuous running MYSQL queries
 ```sql
 watch -n 1 "mysql -e 'SHOW FULL PROCESSLIST'"
 ```
+### To continuously monitor active MySQL connections
+```sql
+watch -n 1 "mysql -e \"SHOW STATUS LIKE 'Threads_connected';\""
+```
 
-
-### Check "MYSQL uptime in seconds", "Max Conn Configured", "max connection used since the last restart" and "InnoDB Buffer Pool" Size in GBs
+### Check "MYSQL uptime in seconds", "Max Conn Configured", "max connection used since the last restart", "InnoDB Buffer Pool" Size in GBs, TimeOut Configured and interactive WaitTimeOut Configured.
 
 ```sql
 mysql -e "SHOW GLOBAL STATUS LIKE 'Uptime';"
@@ -16,6 +19,11 @@ mysql -e "SHOW VARIABLES LIKE 'max_connections';"
 mysql -e "SHOW STATUS LIKE 'Max_used_connections';"
 
 mysql -e "SELECT @@innodb_buffer_pool_size / 1024 / 1024 / 1024 AS buffer_pool_size_GB;"
+
+mysql -e "SHOW VARIABLES LIKE 'wait_timeout';"
+
+mysql -e "SHOW VARIABLES LIKE 'interactive_timeout';"
+
 ```
 
 ### Create a Database
