@@ -5,6 +5,17 @@
 watch -n 1 "mysql -e 'SHOW FULL PROCESSLIST'"
 ```
 
+
+### Check "MYSQL uptime in seconds", "max connection used since the last restart" and "InnoDB Buffer Pool" Size in GBs
+
+```sql
+mysql -e "SHOW GLOBAL STATUS LIKE 'Uptime';"
+
+mysql -e "SHOW STATUS LIKE 'Max_used_connections';"
+
+mysql -e "SELECT @@innodb_buffer_pool_size / 1024 / 1024 / 1024 AS buffer_pool_size_GB;"
+```
+
 ### Create a Database
 
 ```sql
@@ -134,9 +145,5 @@ sed -n -e '/CREATE TABLE.*`mytable`/,/UNLOCK TABLES;/p' db_dump.sql > mytable.sq
 Where **mytable** is the actual table name and db_dump.sql is the database dump. 
 
 
-### Check InnoDB Buffer Pool Size in GBs
-Displays the size of the InnoDB buffer pool.
-```sql
-mysql -e "SELECT @@innodb_buffer_pool_size / 1024 / 1024 / 1024 AS buffer_pool_size_GB;"
-```
+
 
