@@ -6,10 +6,12 @@ watch -n 1 "mysql -e 'SHOW FULL PROCESSLIST'"
 ```
 
 
-### Check "MYSQL uptime in seconds", "max connection used since the last restart" and "InnoDB Buffer Pool" Size in GBs
+### Check "MYSQL uptime in seconds", "Max Conn Configured", "max connection used since the last restart" and "InnoDB Buffer Pool" Size in GBs
 
 ```sql
 mysql -e "SHOW GLOBAL STATUS LIKE 'Uptime';"
+
+mysql -e "SHOW VARIABLES LIKE 'max_connections';"
 
 mysql -e "SHOW STATUS LIKE 'Max_used_connections';"
 
