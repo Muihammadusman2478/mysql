@@ -64,3 +64,25 @@ Displays all users in MySQL.
 SELECT user, host FROM mysql.user;
 ```
 
+## Granting User Access to a Database
+
+### Objective
+Grant **User A** access to **Database B**.
+
+### Steps
+
+1. **Switch to Database B** and execute the following commands:
+   
+   ```sql
+   GRANT ALL PRIVILEGES ON B.* TO 'A'@'%';
+   FLUSH PRIVILEGES;
+   ```
+
+2. **Switch to Database A and Verify the privileges in Database A** by running:
+   
+   ```sql
+   SHOW GRANTS FOR 'A'@'%';
+   ```
+
+
+
