@@ -12,6 +12,24 @@ cd /var/lib/mysql && ls -ld ?????????? | grep '^d'| awk '{print $NF}' | du -sch 
 
 ---
 
+## Two ways to see if MYSQL is running in recovery mode or not.
+
+```sh
+mysql  -e "SHOW VARIABLES LIKE 'innodb_force_recovery';"
+```
+
+```sh
+ps aux | grep mysqld
+```
+
+Look for flags like --innodb-force-recovery=N.
+
+
+
+
+
+
+
 # **Recover Crashed MySQL**
 
 ## **Step 1: Start MySQL in Recovery Mode**
