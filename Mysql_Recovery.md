@@ -12,7 +12,7 @@ cd /var/lib/mysql && ls -ld ?????????? | grep '^d'| awk '{print $NF}' | du -sch 
 
 ---
 
-## Two ways to see if MYSQL is running in recovery mode or not.
+## **3. Two ways to see if MYSQL is running in recovery mode or not.
 
 ```sh
 mysql  -e "SHOW VARIABLES LIKE 'innodb_force_recovery';"
