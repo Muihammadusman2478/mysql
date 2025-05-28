@@ -12,6 +12,8 @@ watch -n 1 "mysql -e \"SHOW STATUS LIKE 'Threads_connected';\""
 ### Check "MYSQL uptime in seconds", "Max Conn Configured", "max connection used since the last restart", "InnoDB Buffer Pool" Size in GBs, TimeOut Configured and interactive WaitTimeOut Configured.
 
 ```sql
+mysql  -e "SHOW VARIABLES LIKE 'innodb_force_recovery';"
+
 mysql -e "SHOW GLOBAL STATUS LIKE 'Uptime';"
 
 mysql -e "SHOW VARIABLES LIKE 'max_connections';"
