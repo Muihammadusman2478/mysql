@@ -26,6 +26,19 @@ mysql -e "SHOW VARIABLES LIKE 'wait_timeout';"
 
 mysql -e "SHOW VARIABLES LIKE 'interactive_timeout';"
 
+#The number of files that are currently open by the MariaDB server.
+mysql -e "SHOW GLOBAL STATUS LIKE 'Open_files';"
+
+# Max open Files Limit, MariaDB can open
+mysql -e "SHOW GLOBAL VARIABLES LIKE 'open_files_limit';"
+
+#Tables Opened Since Startup, if high, it is a sign that the table cache size is too low.
+mysql -e "SHOW GLOBAL STATUS LIKE 'Opened_tables';"
+
+#Check Table Cache Size
+mysql -e "SHOW GLOBAL VARIABLES LIKE 'table_open_cache';"
+
+
 ```
 
 ### Create a Database
