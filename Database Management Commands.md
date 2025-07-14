@@ -39,6 +39,13 @@ mysql -e "SHOW GLOBAL STATUS LIKE 'Opened_tables';"
 mysql -e "SHOW GLOBAL VARIABLES LIKE 'table_open_cache';"
 
 
+grep  -R "open_files_limit\|max_connections" /etc/mysql/
+
+
+cat /var/log/php$(php -v | head -n 1 | cut -f2 -d " " | cut -f1,2 -d ".")-fpm.log | grep -i "max_children"
+
+grep -i open_files /var/log/syslog
+
 ```
 
 ### Create a Database
